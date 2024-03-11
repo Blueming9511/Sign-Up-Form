@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=League+Spartan&family=Roboto&family=Rowdies:wght@300&family=Russo+One&display=swap"
+        rel="stylesheet">
+
+        
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            /* Make the container a flexbox */
+
+            align-items: center;
+            min-height: 100vh;
+            /* Set the container height to 100% of the viewport */
+            background-color: rgb(190, 200, 209);
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: rgb(46, 85, 120);
+            text-shadow:
+                10px 10px 15px rgba(70, 70, 70, 0.12);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            min-width: 300px;
+            max-height: fit-content;
+
+            box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+                10px 10px 15px rgba(70, 70, 70, 0.12);
+            border-radius: 30PX;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+
+
+        }
+
+        input {
+            width: 80%;
+            border-radius: 7px;
+            padding: 6px;
+            border: 0;
+            
+            box-shadow:
+                inset -8px -8px 8px 0 rgba(174, 174, 192, 0.25),
+                inset 8px 8px 8px 0 #fff;
+
+        }
+
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form_info {
+            display: grid;
+            grid-template-columns: repeat(2, 2fr);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+            position: relative;
+            left: 0.5rem;
+        }
+
+
+        input:hover {
+            box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+                10px 10px 15px rgba(70, 70, 70, 0.12);
+        }
+
+        input:focus {
+            box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+                10px 10px 15px rgba(70, 70, 70, 0.12);
+            border: 1px solid rgb(200, 200, 200);
+
+        }
+
+        input:placeholder-shown {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        label {
+            z-index: 0;
+        }
+
+        #btn-submit {
+            border: 0;
+            padding: 10px;
+            border-radius: 2rem;
+
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: rgb(95, 95, 95);
+            font-weight: bolder;
+            box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+                10px 10px 15px rgba(70, 70, 70, 0.12);
+
+            cursor: pointer;
+        }
+
+        #btn-submit:active {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        #btn-submit:hover {
+            box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+                10px 10px 15px rgba(70, 70, 70, 0.12);
+            transition: 200ms ease-out;
+        }
+
+        img {
+            height: 100vh;
+
+
+        }
+
+        .full-container{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 3em;
+
+        }
+
+
+        @media only screen and (max-width: 400px) {
+            
+            .container{
+                position: relative;
+                right: 8%;
+            }
+
+            .form_info {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                right: 2em;
+            }
+
+            input {
+                width: 120%;
+                border-radius: 7px;
+                padding: 6px;
+                border: 0;
+
+
+                box-shadow:
+                    inset -8px -8px 8px 0 rgba(174, 174, 192, 0.25),
+                    inset 8px 8px 8px 0 #fff;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <img src="img/hey.jpg" alt="" srcset=""> -->
+    <div class="full-container">
+        <div class="container">
+            <h1>sign up </h1>
+            <form onsubmit="return validate()" action="#" method="post">
+
+                <div class="form_info">
+                    <div class="form-group">
+                        <label for="Firstname">First name</label>
+                        <input type="text" name="Firstname" id="firstname">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname">Last name</label>
+                        <input type="text" id="lastname" name="Lastname">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" name="Email" placeholder="abc@example.com" id="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="PhoneNumber">Phone Number</label>
+                        <input type="tel" id="phonenumber" name="PhoneNumber" placeholder="e.g 999-999-9999" max="11">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="password" id="pwd" name="Password" min="8">
+                    </div>
+                    <div class="form-group">
+                        <label for="Confirm_pwd">Confirm Password</label>
+                        <input type="password" id="confirm_pwd" name="Confirm_pwd" min="8">
+
+                    </div>
+                </div>
+                <p class="errorMessage" style="margin-top: 0; color: rgba(255, 0, 0, 0.749); display: none;">This is error message
+                </p>
+                <button id="btn-submit" onclick="" type="submit">Create account</button>
+
+            </form>
+
+            <script>
+
+                let firstname = document.getElementById("firstname");
+                let lastname = document.getElementById("lastname");
+                let email = document.getElementById("email");
+                let phonenumber = document.getElementById("phonenumber");
+                let pwd = document.getElementById("pwd");
+                let confirm_pwd = document.getElementById("confirm_pwd");
+                let form_grp = document.querySelector(".form-group")
+                let errorMasage = document.querySelector(".errorMessage")
+
+
+                function validate(e) {
+
+                    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+                    let isValidate = true;
+                    // check name
+                    if (firstname.value === "") {
+                        firstname.style.outline = "red";
+                        errorMasage.textContent = "Please enter your first name!";
+                        firstname.focus();
+                        errorMasage.style.display = "block";
+                        firstname.addEventListener("input", () => {
+                            errorMasage.style.display = "none";
+                        })
+                        isValidate = false;
+                    }
+                    else if (lastname.value === "") {
+                        errorMasage.textContent = "Please enter your last name!";
+                        lastname.focus();
+                        errorMasage.style.display = "block";
+                        lastname.addEventListener("input", () => {
+                            errorMasage.style.display = "none";
+                        })
+                        isValidate = false;
+
+                    } else if (email.value === "") {
+                        errorMasage.textContent = "Please enter your email!";
+                        errorMasage.style.display = "block";
+                        email.focus();
+                        email.addEventListener("click", function () {
+                            errorMasage.style.display = "none";
+                        })
+                        return false;
+                    }
+                    else if (!emailRegex.test(email.value)) {
+                        errorMasage.style.display = "block";
+                        errorMasage.textContent = "Your email is not in correct format!";
+                        email.focus();
+                        email.addEventListener("click", function () {
+                            errorMasage.style.display = "none";
+                        })
+                        return false;
+                    }
+                    else if (phonenumber.value === "") {
+                        errorMasage.style.display = "block";
+                        errorMasage.textContent = "Please enter your phone number";
+                        phonenumber.focus();
+                        phonenumber.addEventListener("click", function () {
+                            errorMasage.style.display = "none";
+                        })
+                        return false;
+                    }
+                    else if (phonenumber.value.lengthc > 11) {
+                        errorMasage.style.display = "block";
+                        errorMasage.textContent = "Your number is not in correct format";
+                        phonenumber.focus();
+                        phonenumber.addEventListener("click", function () {
+                            errorMasage.style.display = "none";
+                        })
+                        return false;
+                    }
+                    else if (pwd.value === "") {
+                        errorMasage.style.display = "block";
+                        errorMasage.textContent = "Please enter your password!";
+                        pwd.focus();
+                        pwd.addEventListener("click", function () {
+                            errorMasage.style.display = "none";
+                        })
+                        return false;
+                    }
+                    else if (pwd.value.length < 8) {
+                        errorMasage.style.display = "block";
+                        errorMasage.textContent = "Your password must be at least 8 charater";
+                        pwd.focus();
+                        pwd.addEventListener("click", function () {
+                            errorMasage.style.display = "none";
+                        })
+                        return false;
+                    }
+                    else if (confirm_pwd.value != pwd.value) {
+                        errorMasage.style.display = "block";
+                        errorMasage.textContent = "Your confirm password doesn't match your password!";
+                        confirm_pwd.focus();
+                        confirm_pwd.addEventListener("click", function () {
+                            errorMasage.style.display = "none";
+                        })
+                        return false;
+                    }
+
+                    
+
+
+                    return isValidate;
+                }
+
+
+
+            </script>
+
+        </div>
+    </div>
+
+</body>
+
+
+
+</html>
